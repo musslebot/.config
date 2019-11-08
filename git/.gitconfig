@@ -1,0 +1,15 @@
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	unstage = reset HEAD --
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+[user]
+	email = musslebot@gmail.com
+[core]
+	editor = vim
+[credential]
+	helper = store
+[init]
+	templatedir = ~/.git-templates
