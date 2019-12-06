@@ -2,19 +2,24 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 autocmd VimEnter * NERDTree
 autocmd BufWinEnter * NERDTreeMirror
 let python_highlight_all=1
 
+" ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 " NERDTree settings
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 let NERDTreeShowHidden=1
+
+" YCM
+let g:ycm_autoclose_preview_window_after_completion=1
 
 syntax on
 set clipboard=unnamed      " use system keyboard
