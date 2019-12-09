@@ -4,8 +4,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'jparise/vim-graphql'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()            " required
 autocmd VimEnter * NERDTree
 autocmd BufWinEnter * NERDTreeMirror
@@ -13,6 +15,12 @@ let python_highlight_all=1
 
 " ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_max_files=0
 
 " NERDTree settings
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
@@ -22,6 +30,7 @@ let NERDTreeShowHidden=1
 let g:ycm_autoclose_preview_window_after_completion=1
 
 syntax on
+set updatetime=250
 set clipboard=unnamed      " use system keyboard
 set encoding=utf-8
 set number
