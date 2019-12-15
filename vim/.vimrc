@@ -29,6 +29,7 @@ let NERDTreeShowHidden=1
 " YCM
 let g:ycm_autoclose_preview_window_after_completion=1
 
+colo desert
 syntax on
 set updatetime=250
 set clipboard=unnamed      " use system keyboard
@@ -41,7 +42,7 @@ set nocompatible              " be iMproved, required
 set autoindent
 set expandtab
 set tabstop=4
-set guifont=Monaco:h11
+set guifont=Monaco:h14
 filetype off                  " required
 filetype plugin indent on    " required
 autocmd BufWritePre * :%s/\s\+$//e
