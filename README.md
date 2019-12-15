@@ -9,22 +9,19 @@ ln -s ~/Git/.config/.git-completion.bash ~/.git-completion.bash
 * Set up bash
 ```
 ln -s ~/Git/.config/.bashrc ~/.bashrc
-```
-Add the following to `~/.bash_profile`:
-```
+cat <<EOT >> ~/.bash_profile
+
 # The next line allows pipenv to source
 [[ -f ~/.bashrc ]] && source ~/.bashrc
+EOT
 ```
 
-* Install MacVim
-https://github.com/macvim-dev/macvim/releases
+* Install NeoVim
+brew install neovim
 
-* Setup MacVim
+* Setup NeoVim
 ```
 ln -s ~/Git/.config/vim/.vimrc ~/.vimrc
-ln -s ~/Git/.config/vim/.gvimrc ~/.gvimrc
-vim +PluginInstall +qall
-
-cd ~/.vim/bundle/YouCompleteMe/
-./install.py --ts-completer
+mkdir -p ~/.config/nvim
+ln -s ~/Git/.config/vim/init.vim ~/.config/nvim/init.vim
 ```

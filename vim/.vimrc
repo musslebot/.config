@@ -1,14 +1,23 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'jparise/vim-graphql'
-Plugin 'airblade/vim-gitgutter'
-call vundle#end()            " required
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'tmhedberg/SimpylFold'
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.sh --ts-completer
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'leafgarland/typescript-vim'
+Plug 'jparise/vim-graphql'
+Plug 'airblade/vim-gitgutter'
+call plug#end()
 autocmd VimEnter * NERDTree
 autocmd BufWinEnter * NERDTreeMirror
 let python_highlight_all=1
@@ -43,8 +52,6 @@ set autoindent
 set expandtab
 set tabstop=4
 set guifont=Monaco:h14
-filetype off                  " required
-filetype plugin indent on    " required
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Enable folding
@@ -52,12 +59,3 @@ set foldmethod=indent
 set foldlevel=99
 " Enable folding with spacebar
 nnoremap <space> za
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
