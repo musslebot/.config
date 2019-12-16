@@ -56,6 +56,7 @@ set autoindent
 set expandtab
 set tabstop=4
 set guifont=Monaco:h14
+set mouse=a                  " mouse support
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd TermOpen * setlocal nonumber
 
