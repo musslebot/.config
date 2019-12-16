@@ -53,9 +53,13 @@ set expandtab
 set tabstop=4
 set guifont=Monaco:h14
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd TermOpen * setlocal nonumber
 
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
 " Enable folding with spacebar
 nnoremap <space> za
+
+" Esc in terminal to visual mode
+tnoremap <Esc> <C-\><C-n>
