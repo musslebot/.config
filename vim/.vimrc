@@ -30,6 +30,10 @@ let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_max_files=0
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " NERDTree settings
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
