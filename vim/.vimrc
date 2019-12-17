@@ -5,6 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'neomake/neomake'
 Plug 'tmhedberg/SimpylFold'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
@@ -17,6 +18,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'leafgarland/typescript-vim'
 Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 autocmd VimEnter * NERDTree
 autocmd BufWinEnter * NERDTreeMirror
@@ -41,6 +43,18 @@ let NERDTreeShowHidden=1
 
 " YCM
 let g:ycm_autoclose_preview_window_after_completion=1
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_yaml_checkers = ['yamllint']
 
 colo desert
 syntax on

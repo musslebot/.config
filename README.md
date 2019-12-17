@@ -19,6 +19,11 @@ EOT
 * Install NeoVim
 brew install neovim
 
+* Install linting deps
+```
+brew install eslint pylint yamllint
+```
+
 * Setup NeoVim
 ```
 ln -s ~/Git/.config/vim/.vimrc ~/.vimrc
