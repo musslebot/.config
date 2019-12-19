@@ -73,6 +73,11 @@ set guifont=Monaco:h14
 set mouse=a                  " mouse support
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd TermOpen * setlocal nonumber
+" Enable alt-arrow movements between window splits
+nnoremap <A-Left> <C-w>h
+nnoremap <A-Down> <C-w>j
+nnoremap <A-Up> <C-w>k
+nnoremap <A-Right> <C-w>l
 
 " Enable folding
 set foldmethod=indent
