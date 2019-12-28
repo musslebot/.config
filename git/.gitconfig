@@ -8,7 +8,7 @@
 [user]
 	email = musslebot@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 [credential]
 	helper = store
 [init]
