@@ -17,6 +17,13 @@ cat <<EOT >> ~/.bash_profile
 EOT
 ```
 
+* Download iTerm2
+```
+curl -o ~/Downloads/iterm.zip -L https://iterm2.com/downloads/stable/latest
+```
+Unzip and move to Applications
+Open and set preferences custom folder to ~/Git/.config/iterm
+
 * Install NeoVim
 ```
 brew install neovim eslint pylint yamllint
