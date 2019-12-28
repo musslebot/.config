@@ -1,5 +1,7 @@
 * Install Brew
-`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 * Set up git
 ```
@@ -22,7 +24,7 @@ EOT
 curl -o ~/Downloads/iterm.zip -L https://iterm2.com/downloads/stable/latest
 ```
 Unzip and move to Applications
-Open and set preferences custom folder to ~/Git/.config/iterm
+Open and set preferences custom folder to `~/Git/.config/iterm`
 
 * Install NeoVim
 ```
