@@ -1,9 +1,10 @@
 * Install Brew
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-* Set up git completetion
+* Set up git
 ```
-ln -s ~/Git/.config/.git-completion.bash ~/.git-completion.bash
+ln -s ~/Git/.config/git/.gitconfig ~/.gitconfig
+ln -s ~/Git/.config/git/.git-completion.bash ~/.git-completion.bash
 ```
 
 * Set up bash
@@ -17,15 +18,10 @@ EOT
 ```
 
 * Install NeoVim
-brew install neovim
+```
+brew install neovim eslint pylint yamllint
+pip3 install pynvim
 
-* Install linting deps
-```
-brew install eslint pylint yamllint
-```
-
-* Setup NeoVim
-```
 ln -s ~/Git/.config/vim/.vimrc ~/.vimrc
 mkdir -p ~/.config/nvim
 ln -s ~/Git/.config/vim/init.vim ~/.config/nvim/init.vim
