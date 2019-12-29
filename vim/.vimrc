@@ -22,6 +22,7 @@ Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 autocmd VimEnter * NERDTree
 autocmd BufWinEnter * NERDTreeMirror
@@ -59,6 +60,7 @@ set expandtab
 set tabstop=4
 set guifont=Monaco:h14
 set mouse=a                  " mouse support
+set noshowmode               " dont show mode since lightline
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd TermOpen * setlocal nonumber
 " Enable alt-arrow movements between window splits
