@@ -9,12 +9,14 @@ Plug 'neomake/neomake'
 Plug 'tmhedberg/SimpylFold'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
-function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
-    !./install.sh --ts-completer
-  endif
-endfunction
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 Plug 'leafgarland/typescript-vim'
 Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-gitgutter'
@@ -40,9 +42,6 @@ endif
 " NERDTree settings
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 let NERDTreeShowHidden=1
-
-" YCM
-let g:ycm_autoclose_preview_window_after_completion=1
 
 colo desert
 syntax on
