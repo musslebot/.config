@@ -23,6 +23,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 autocmd VimEnter * NERDTree
 autocmd BufWinEnter * NERDTreeMirror
