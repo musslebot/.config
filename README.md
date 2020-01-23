@@ -6,17 +6,12 @@
 * Set up git
 ```
 ln -s ~/Git/.config/git/.gitconfig ~/.gitconfig
-ln -s ~/Git/.config/git/.git-completion.bash ~/.git-completion.bash
+ln -s ~/Git/.config/git/.git-completion.zsh ~/.git-completion.zsh
 ```
 
-* Set up bash
+* Set up zsh
 ```
-ln -s ~/Git/.config/.bashrc ~/.bashrc
-cat <<EOT >> ~/.bash_profile
-
-# The next line allows pipenv to source
-[[ -f ~/.bashrc ]] && source ~/.bashrc
-EOT
+ln -s ~/Git/.config/.zshrc ~/.zshrc
 ```
 
 * Download iTerm2
