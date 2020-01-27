@@ -63,8 +63,17 @@ set tabstop=4
 set guifont=Monaco:h14
 set mouse=a                  " mouse support
 set noshowmode               " dont show mode since lightline
-autocmd BufWritePre * :%s/\s\+$//e
-autocmd TermOpen * setlocal nonumber
+
+" remove search highlighting after search
+augroup vimrc-incsearch-highlight
+  autocmd!
+  autocmd CmdlineEnter /,\? :set hlsearch
+  autocmd CmdlineLeave /,\? :set nohlsearch
+augroup END
+
+autocmd BufWritePre * :%s/\s\+$//e  " Remove trailing whitespace
+autocmd TermOpen * setlocal nonumber  " Remove term line numbers
+
 " Enable alt-arrow movements between window splits
 nnoremap <A-Left> <C-w>h
 nnoremap <A-Down> <C-w>j
