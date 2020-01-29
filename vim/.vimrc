@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'neomake/neomake'
 Plug 'tmhedberg/SimpylFold'
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -25,23 +24,15 @@ Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+nnoremap <silent> <space><space> :Files<CR>
+let g:fzf_buffers_jump = 1 " [Buffers] Jump to the existing window if possible
+
 call plug#end()
 autocmd VimEnter * NERDTree
 autocmd BufWinEnter * NERDTreeMirror
 let python_highlight_all=1
-
-" ctrlp
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_max_files=0
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
 
 " NERDTree settings
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
