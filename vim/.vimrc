@@ -1,13 +1,21 @@
+" Auto-install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" <<< INITIALIZE PLUGINS >>>
 call plug#begin('~/.vim/plugged')
+
 Plug 'neomake/neomake'
 Plug 'tmhedberg/SimpylFold'
 Plug 'scrooloose/nerdtree'
+autocmd VimEnter * NERDTree
+autocmd BufWinEnter * NERDTreeMirror
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let NERDTreeShowHidden=1
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -16,6 +24,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
+
 Plug 'leafgarland/typescript-vim'
 Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-gitgutter'
@@ -30,13 +39,7 @@ nnoremap <silent> <space><space> :Files<CR>
 let g:fzf_buffers_jump = 1 " [Buffers] Jump to the existing window if possible
 
 call plug#end()
-autocmd VimEnter * NERDTree
-autocmd BufWinEnter * NERDTreeMirror
-let python_highlight_all=1
-
-" NERDTree settings
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-let NERDTreeShowHidden=1
+" <<< END INITIALIZE PLUGINS >>>
 
 colo desert
 syntax on
