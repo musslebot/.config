@@ -58,6 +58,10 @@ set guifont=Monaco:h14
 set mouse=a                  " mouse support
 set noshowmode               " dont show mode since lightline
 
+" tab settings for filetypes
+autocmd FileType python setlocal ts=4 sts=4 sw=4
+autocmd FileType javascript typescript setlocal ts=2 sts=2 sw=2
+
 " remove search highlighting after search
 augroup vimrc-incsearch-highlight
   autocmd!
